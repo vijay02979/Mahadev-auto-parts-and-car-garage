@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahadev Auto Parts and Car Garage</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Top Advertisement Banner -->
+    <div class="bg-yellow-500 text-black text-center py-2 px-4 font-bold text-sm tracking-wide shadow-md flex justify-center items-center gap-2">
+        <i class="fa-solid fa-ad"></i> ADVERTISEMENT: Special Wholesale Discount! Get 10% Off on Bulk Orders. Call Now!
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-extrabold tracking-wider text-yellow-400">Mahadev Auto Parts</h1>
+                <p class="text-xs text-gray-400">Car Garage & Wholesale Hub</p>
+            </div>
+            <div class="text-sm bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700">
+                <i class="fa-solid fa-shield-halved text-yellow-400"></i> Wholesale Catalog (View Only)
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-white py-12 px-4 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold mb-3">Genuine Car Parts & Garage Accessories</h2>
+            <p class="text-gray-300 text-sm">Browse our exclusive wholesale collection. View photos and prices instantly. Watch a short ad to Like or Comment!</p>
+        </div>
+    </section>
+
+    <!-- Main Products Grid -->
+    <main class="container mx-auto px-4 py-8">
+        <h3 class="text-xl font-bold text-gray-800 mb-6 border-b pb-2"><i class="fa-solid fa-boxes-stacked text-blue-600"></i> Our Products (15-20 Catalog)</h3>
+        
+        <!-- Product Grid Container (15 Products Sample) -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Products will be injected dynamically via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Ad / Watch Video Modal -->
+    <div id="adModal" class="fixed inset-0 bg-black bg-opacity-75 hidden justify-center items-center z-50 px-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 text-center relative shadow-2xl animate-fade-in">
+            <button onclick="closeAdModal()" class="absolute top-3 right-3 text-gray-500 hover:text-black font-bold text-lg">&times;</button>
+            <div class="text-yellow-500 text-4xl mb-3"><i class="fa-solid fa-play-circle"></i></div>
+            <h3 class="text-lg font-bold mb-2">Sponsored Ad</h3>
+            <p class="text-xs text-gray-600 mb-4">Please watch this 5-second ad to unlock Like & Comment feature!</p>
+            
+            <!-- Simulated Video Box -->
+            <div class="bg-black h-40 rounded flex items-center justify-center text-white mb-4 relative overflow-hidden">
+                <p id="ad-timer" class="text-sm font-semibold">Ad playing... 5s</p>
+            </div>
+            
+            <button id="claimActionBtn" disabled class="w-full bg-gray-400 text-white py-2 rounded font-bold cursor-not-allowed transition" onclick="completeAdAction()">
+                Please Wait...
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-xs mt-12 border-t border-gray-800">
+        <p>&copy; 2026 Mahadev Auto Parts and Car Garage. All Rights Reserved.</p>
+        <p class="mt-1">Wholesale Display Portal - No Direct Messaging Available.</p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Products and Ad Logic -->
+    <script>
+        // 15-20 Products Data Array
+        const products = [
+            { id: 1, name: "Car Headlight Assembly", price: "₹2,500 / piece", image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=500&auto=format&fit=crop&q=60", likes: 14, comments: 3 },
+            { id: 2, name: "Heavy Duty Brake Pads", price: "₹1,200 / set", image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=500&auto=format&fit=crop&q=60", likes: 25, comments: 5 },
+            { id: 3, name: "Synthetic Engine Oil (5L)", price: "₹3,100 / tin", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=500&auto=format&fit=crop&q=60", likes: 40, comments: 12 },
+            { id: 4, name: "Car Air Filter", price: "₹350 / piece", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=500&auto=format&fit=crop&q=60", likes: 8, comments: 1 },
+            { id: 5, name: "Spark Plugs (Pack of 4)", price: "₹800 / pack", image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500&auto=format&fit=crop&q=60", likes: 19, comments: 4 },
+            { id: 6, name: "Car Battery 12V", price: "₹4,500 / piece", image: "https://images.unsplash.com/photo-1609137144881-62052c02c6ef?w=500&auto=format&fit=crop&q=60", likes: 33, comments: 7 },
+            { id: 7, name: "Windshield Wiper Blades", price: "₹400 / pair", image: "
